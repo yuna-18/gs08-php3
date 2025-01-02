@@ -11,6 +11,8 @@ $stmt->execute();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MyPage</title>
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body id="mypage">
@@ -27,7 +29,7 @@ $stmt->execute();
           $content .= '音楽カテゴリ：' . htmlSpChar($userData['music_category']) . '　';
           $content .= 'メルマガ：' . ($userData['subscribe_mail'] === 1 ? '受信する' : '受信しない') . '</p>';
           $content .= '</a>';
-          // $content .= '<a href="./form-delete.php?id=' . $userData['id'] . '">削除</a>';
+          $content .= '<a href="./form-delete.php?id=' . $userData['id'] . '">削除</a>';
           $content .= '</div>';
         }
       }
@@ -38,6 +40,7 @@ $stmt->execute();
         </div>
         <div class="mypage__content"><?= $content ?></div>
       </div>
+      <a href="./index.php" class="totop-btn btn">TOPへ戻る</a>
     </div>
   </main>
 </body>

@@ -68,7 +68,7 @@ if ($status === false) {
         <div class="form__outer">
           <p class="question">メールで演奏会の通知を受け取れます。</p>
           <div class="input-check__item">
-            <label for="subscribe_mail"><input type="checkbox" name="subscribe_mail" id="subscribe_mail" value="<?= $result['subscribe_mail'] ?>">受け取る</label>
+            <label for="subscribe_mail"><input type="checkbox" name="subscribe_mail" id="subscribe_mail" value="1" <?= $result['subscribe_mail'] === 1 ? 'checked' : '' ?>>受け取る</label>
           </div>
         </div>
       </div>
