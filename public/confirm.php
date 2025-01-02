@@ -1,10 +1,10 @@
 <?php
-require_once('./_funcs.php');
+require_once('../includes/_funcs.php');
 // 受け取る値が配列以外
 $name = htmlSpChar($_POST['name']);
 $furigana = htmlSpChar($_POST['furigana']);
 $email = htmlSpChar($_POST['email']);
-$subscribeMail= $_POST['subscribe_mail'] !== NULL ? 1 : 0;
+$subscribeMail = $_POST['subscribe_mail'] !== NULL ? 1 : 0;
 
 
 session_start();
@@ -35,46 +35,46 @@ if (isset($_POST['categories']) && is_array($_POST['categories'])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>登録内容確認</title>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body id="confirm">
-  <div class="confirm__wrapper">
-    <div class="confirm__container">
-      <div class="confirm__contents">
+  <main class="form__wrapper">
+    <div class="form__container">
+      <div class="form__contents">
         <div class="notation">
           <p>以下の内容で登録します。</p>
         </div>
-        <div class="confirm__outer">
-          <p class="confirm__label">氏名</p>
-          <p class="confirm__content"><?= $name; ?></p>
+        <div class="form__outer">
+          <p class="register__label">氏名</p>
+          <p class="register__content"><?= $name; ?></p>
         </div>
-        <div class="confirm__outer">
-          <p class="confirm__label">フリガナ</p>
-          <p class="confirm__content"><?= $furigana; ?></p>
+        <div class="form__outer">
+          <p class="register__label">フリガナ</p>
+          <p class="register__content"><?= $furigana; ?></p>
         </div>
-        <div class="confirm__outer">
-          <p class="confirm__label">メール</p>
-          <p class="confirm__content"><?= $email; ?></p>
+        <div class="form__outer">
+          <p class="register__label">メール</p>
+          <p class="register__content"><?= $email; ?></p>
         </div>
-        <div class="confirm__outer">
-          <p class="confirm__label">好きな音楽のカテゴリ</p>
+        <div class="form__outer">
+          <p class="register__label">好きな音楽のカテゴリ</p>
           <?php
           if (!empty($_SESSION['categories'])) {
-            echo '<ul class="confirm__content--list">';
+            echo '<ul class="register__content--list">';
             foreach ($_SESSION['categories'] as $category) {
-              echo '<li class="confirm__content">' . $category . '</li>';
+              echo '<li class="register__content">' . $category . '</li>';
             }
             echo '</ul>';
           } else {
-            echo '<p class="confirm__content">選択されたカテゴリはありません。</p>';
+            echo '<p class="register__content">選択されたカテゴリはありません。</p>';
           }
           ?>
         </div>
-        <div class="confirm__outer">
-          <p class="confirm__label">メールで演奏会の通知を受け取る</p>
-          <p class="confirm__content">
+        <div class="form__outer">
+          <p class="register__label">メールで演奏会の通知を受け取る</p>
+          <p class="register__content">
             <?php
             if ($subscribeMail === 1) {
               echo "受け取る";
@@ -103,7 +103,7 @@ if (isset($_POST['categories']) && is_array($_POST['categories'])) {
         <input type="submit" class="submit-btn btn" value="送信">
       </div>
     </form>
-  </div>
+  </main>
   <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   <script src="../js/index.js"></script>
 </body>

@@ -1,5 +1,5 @@
 <?php
-require_once('./_funcs.php');
+require_once('../includes/_funcs.php');
 session_start();
 
 // var_dump($_SESSION);
@@ -19,14 +19,14 @@ $subscribeMail = $_SESSION['subscribe_mail'];
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>登録完了</title>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body id="complete">
-  <div class="complete__wrapper">
-    <div class="complete__container">
-      <div class="complete__contents">
+  <main class="form__wrapper">
+    <div class="form__container">
+      <div class="form__contents">
         <?php
         $pdo = connectDb();
         $stmt = $pdo->prepare("INSERT INTO userdata_table(name, furigana, email, music_category, subscribe_mail, date) VALUES(:name, :furigana, :email, :music_category, :subscribe_mail, now())");
@@ -71,25 +71,25 @@ $subscribeMail = $_SESSION['subscribe_mail'];
               <div class="notation">
                 <p>以下の内容で登録しました。</p>
               </div>
-              <div class="complete__outer">
-                <p class="complete__label">氏名</p>
-                <p class="complete__content"><?= $userData['name'] ?></p>
+              <div class="form__outer">
+                <p class="register__label">氏名</p>
+                <p class="register__content"><?= $userData['name'] ?></p>
               </div>
-              <div class="complete__outer">
-                <p class="complete__label">フリガナ</p>
-                <p class="complete__content"><?= $userData['furigana'] ?></p>
+              <div class="form__outer">
+                <p class="register__label">フリガナ</p>
+                <p class="register__content"><?= $userData['furigana'] ?></p>
               </div>
-              <div class="complete__outer">
-                <p class="complete__label">メール</p>
-                <p class="complete__content"><?= $userData['email'] ?></p>
+              <div class="form__outer">
+                <p class="register__label">メール</p>
+                <p class="register__content"><?= $userData['email'] ?></p>
               </div>
-              <div class="complete__outer">
-                <p class="complete__label">好きな音楽のカテゴリ</p>
-                <p class="complete__content"><?= $userData['music_category'] ?></p>
+              <div class="form__outer">
+                <p class="register__label">好きな音楽のカテゴリ</p>
+                <p class="register__content"><?= $userData['music_category'] ?></p>
               </div>
-              <div class="complete__outer">
-                <p class="complete__label">メールで演奏会の通知を受け取る</p>
-                <p class="complete__content">
+              <div class="form__outer">
+                <p class="register__label">メールで演奏会の通知を受け取る</p>
+                <p class="register__content">
                   <?php
                   if ($userData['subscribe_mail'] === 1) {
                     echo "受け取る";
@@ -101,11 +101,12 @@ $subscribeMail = $_SESSION['subscribe_mail'];
               </div>
             <?php } ?>
           <?php } ?>
-        <?php session_destroy(); }?>
+        <?php session_destroy();
+        } ?>
       </div>
     </div>
-    <a href="../index.php" class="totop-btn btn">TOPへ戻る</a>
-  </div>
+    <a href="./index.php" class="totop-btn btn">TOPへ戻る</a>
+  </main>
 </body>
 
 </html>

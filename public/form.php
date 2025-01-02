@@ -5,28 +5,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ユーザー登録フォーム</title>
-  <link rel="stylesheet" href="../css/reset.css">
-  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body id="form">
-  <div class="form__wrapper">
+  <main class="form__wrapper">
     <h1>ユーザー登録フォーム</h1>
     <form action="./confirm.php" method="post" class="form__container">
       <div class="form__contents">
-        <div class="input__outer">
+        <div class="form__outer">
           <label for="name">氏名</label>
           <input type="text" name="name" id="name">
         </div>
-        <div class="input__outer">
+        <div class="form__outer">
           <label for="furigana">フリガナ</label>
           <input type="text" name="furigana" id="furigana">
         </div>
-        <div class="input__outer">
+        <div class="form__outer">
           <label for="email">メール</label>
           <input type="text" name="email" id="email">
         </div>
-        <div class="input__outer">
+        <div class="form__outer">
           <p class="question">好きな音楽のカテゴリ</p>
           <ul class="input-check__list">
             <li class="input-check__item">
@@ -46,7 +46,7 @@
             </li>
           </ul>
         </div>
-        <div class="input__outer">
+        <div class="form__outer">
           <p class="question">メールで演奏会の通知を受け取れます。</p>
           <div class="input-check__item">
             <label for="subscribe_mail"><input type="checkbox" name="subscribe_mail" id="subscribe_mail" value="1">受け取る</label>
@@ -54,12 +54,13 @@
         </div>
       </div>
       <div class="btn__container">
-        <a href="../index.php" class="totop-btn btn">TOPへ戻る</a>
+        <a href="./index.php" class="totop-btn btn">TOPへ戻る</a>
         <input type="submit" class="confirm-btn btn" value="確認する">
       </div>
     </form>
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-    <script src="../js/index.js"></script>
+  </main>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+  <script src="../js/index.js"></script>
 </body>
 
 </html>
