@@ -63,9 +63,6 @@ $subscribeMail = $_SESSION['subscribe_mail'];
             // データを取得して表示
             $userData = $stmt->fetch(PDO::FETCH_ASSOC);
             if (!$userData) {
-              echo `<div class="notation">
-                      <p>データの取得に失敗しました</p>
-                    </div>`;
               exit('データの取得に失敗しました。');
             } else { ?>
               <div class="notation">
@@ -101,7 +98,8 @@ $subscribeMail = $_SESSION['subscribe_mail'];
               </div>
             <?php } ?>
           <?php } ?>
-        <?php session_destroy();
+        <?php
+          session_destroy();
         } ?>
       </div>
     </div>

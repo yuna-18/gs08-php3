@@ -1,5 +1,6 @@
 @import './home';
 @import './form';
+@import './mypage';
 
 @media screen {
   * {
@@ -38,5 +39,6 @@
     width: 240px;
     height: 60px;
     line-height: 60px;
+    cursor: pointer;
   }
 }

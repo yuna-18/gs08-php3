@@ -86,7 +86,7 @@ if (isset($_POST['categories']) && is_array($_POST['categories'])) {
         </div>
       </div>
     </div>
-    <form action="./complete.php" method="post">
+    <form action="./form-complete.php" method="post">
       <?php
       echo '<input type="hidden" name="name" id="name" value="' . $name . '">';
       echo '<input type="hidden" name="furigana" id="furigana" value="' . $furigana . '">';

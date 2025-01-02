@@ -12,7 +12,7 @@
 <body id="form">
   <main class="form__wrapper">
     <h1>ユーザー登録フォーム</h1>
-    <form action="./confirm.php" method="post" class="form__container">
+    <form action="./form-confirm.php" method="post" class="form__container">
       <div class="form__contents">
         <div class="form__outer">
           <label for="name">氏名</label>
