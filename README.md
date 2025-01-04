@@ -7,7 +7,7 @@
 
 
 ## ③DEMO
-https://snowtapir22.sakura.ne.jp/gs08-php3/
+https://snowtapir22.sakura.ne.jp/gs08-php3/public/index.php
 
 ## ⑤工夫した点・こだわった点
 - 今後コードを追記していくことを想定して、フォルダ構成の見直しやコードの整理をしたこと
